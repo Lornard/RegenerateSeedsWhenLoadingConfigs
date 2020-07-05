@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
+    <Name>Regenerate Seeds When Loading Configs</Name>
+    <Guid>9b61964e-879b-4ac2-a0bd-8b0f36e25ca4</Guid>
+    <ProjectGuid>74119046-eaad-4528-934e-45ecec8776ab</ProjectGuid>
+    <ModVersion>1</ModVersion>
+    <Teaser>Adds a prompt when loading configs to regenerate seeds.</Teaser>
+    <Description>Adds a prompt when loading configs to regenerate seeds.
+
+If you simply load a config it will keep the seed number, ultimately generating the same initial map for the game. Regenerating the seed allow to randomize everything again.</Description>
+    <Authors>Lornard</Authors>
+    <SpecialThanks>
+    </SpecialThanks>
+    <AffectsSavedGames>false</AffectsSavedGames>
+    <SupportsSinglePlayer>true</SupportsSinglePlayer>
+    <SupportsMultiplayer>true</SupportsMultiplayer>
+    <SupportsHotSeat>true</SupportsHotSeat>
+    <CompatibleVersions>1.2,2.0</CompatibleVersions>
+    <AssociationData><![CDATA[<Associations>
+  <Dependency type="Dlc" title="Expansion: Gathering Storm" id="4873eb62-8ccc-4574-b784-dda455e74e68" />
+</Associations>]]></AssociationData>
+    <AssemblyName>RegenerateSeedsWhenLoadingConfigs</AssemblyName>
+    <RootNamespace>RegenerateSeedsWhenLoadingConfigs</RootNamespace>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateText id="InlcludePopupSeedText"><File>Localization/RegenerateSeedOnLoadConfigText.sql</File></UpdateText><ImportFiles id="ImportSeedPopup"><File>UI/Multiplayer/RegenerateSeedOnLoadConfig.lua</File></ImportFiles></FrontEndActions>]]></FrontEndActionData>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Localization\RegenerateSeedOnLoadConfigText.sql">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Multiplayer\RegenerateSeedOnLoadConfig.lua">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Localization" />
+    <Folder Include="UI" />
+    <Folder Include="UI\Multiplayer" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)Civ6.targets" />
+</Project>
