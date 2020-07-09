@@ -23,21 +23,21 @@ If you simply load a config it will keep the seed number, ultimately generating 
 </Associations>]]></AssociationData>
     <AssemblyName>RegenerateSeedsWhenLoadingConfigs</AssemblyName>
     <RootNamespace>RegenerateSeedsWhenLoadingConfigs</RootNamespace>
-    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateText id="InlcludePopupSeedText"><File>Localization/RegenerateSeedOnLoadConfigText.sql</File></UpdateText><ImportFiles id="ImportSeedPopup"><File>UI/Multiplayer/RegenerateSeedOnLoadConfig.lua</File></ImportFiles></FrontEndActions>]]></FrontEndActionData>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateText id="InlcludePopupSeedText"><File>Localisation/RegenerateSeedOnLoadConfigText.sql</File></UpdateText><ImportFiles id="ImportSeedPopup"><File>UI/Multiplayer/HostGame.lua</File></ImportFiles></FrontEndActions>]]></FrontEndActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Localization\RegenerateSeedOnLoadConfigText.sql">
+    <Content Include="Localisation\RegenerateSeedOnLoadConfigText.sql">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="UI\Multiplayer\RegenerateSeedOnLoadConfig.lua">
+    <Content Include="UI\Multiplayer\HostGame.lua">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Localization" />
+    <Folder Include="Localisation" />
     <Folder Include="UI" />
     <Folder Include="UI\Multiplayer" />
   </ItemGroup>
