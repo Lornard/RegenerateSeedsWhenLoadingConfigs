@@ -2,14 +2,16 @@
 <Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
-    <Name>Regenerate Seeds When Loading Configs</Name>
-    <Guid>9b61964e-879b-4ac2-a0bd-8b0f36e25ca4</Guid>
+    <Name>Regenerate Seeds When Loading Configs (MPH)</Name>
+    <Guid>94cc68c2-cbf5-43cf-a564-94ce1855fc0e</Guid>
     <ProjectGuid>74119046-eaad-4528-934e-45ecec8776ab</ProjectGuid>
     <ModVersion>1</ModVersion>
     <Teaser>Adds a prompt when loading configs to regenerate seeds.</Teaser>
     <Description>Adds a prompt when loading configs to regenerate seeds.
 
-If you simply load a config it will keep the seed number, ultimately generating the same initial map for the game. Regenerating the seed allow to randomize everything again.</Description>
+If you simply load a config it will keep the seed number, ultimately generating the same initial map for the game. Regenerating the seed allow to randomize everything again.
+
+Private Version to be compatible with MPH.</Description>
     <Authors>Lornard</Authors>
     <SpecialThanks>
     </SpecialThanks>
