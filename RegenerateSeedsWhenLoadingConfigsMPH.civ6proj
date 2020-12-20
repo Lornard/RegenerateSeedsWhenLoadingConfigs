@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Default</Configuration>
-    <Name>Regenerate Seeds When Loading Configs (MPH)</Name>
+    <Name>RegenerateSeedsWhenLoadingConfigsMPH</Name>
     <Guid>94cc68c2-cbf5-43cf-a564-94ce1855fc0e</Guid>
     <ProjectGuid>74119046-eaad-4528-934e-45ecec8776ab</ProjectGuid>
     <ModVersion>1</ModVersion>
