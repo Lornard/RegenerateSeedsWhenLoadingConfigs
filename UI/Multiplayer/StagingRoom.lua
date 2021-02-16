@@ -175,44 +175,44 @@ local LOC_GAME_SUMMARY:string = Locale.Lookup("LOC_MULTIPLAYER_GAME_SUMMARY");
 local LOC_STAGING_ROOM:string = Locale.ToUpper(Locale.Lookup("LOC_MULTIPLAYER_STAGING_ROOM"));
 
 
-------------------------------------------------------------------------------
--- Formating
-------------------------------------------------------------------------------
-local indentationString	= ".............................." -- maxLength = 30 car
-local indentationSpaces	= "                              "
-
-function Indentation(str, maxLength, bAlignRight, bShowSpace)
-	local bIsNumber	= type(str) == "number"
-	local minLength	= 2
-	local indentStr	= (bShowSpace and indentationString) or indentationSpaces
-	local maxLength = math.max(maxLength or string.len(indentStr))
-	--local str 		= (bIsNumber and str > math.pow(10,maxLength-2)-1 and tostring(math.floor(str))) or tostring(str)
-	--local str 		= (bIsNumber and str > 9 and tostring(math.floor(str))) or tostring(str)
-	local str 		= tostring(str)
-	local length 	= string.len(str)
-	
-	if length > maxLength and bIsNumber then
-		str		= tostring(math.floor(tonumber(str)))
-		length 	= string.len(str)
-	end
-	
-	if length < maxLength then
-		if bAlignRight then
-			return string.sub(indentStr, 1, maxLength - length) .. str
-		else
-			return str.. string.sub(indentStr, 1, maxLength - length)
-		end
-	elseif length > maxLength and length > minLength then
-		if bIsNumber then
-			return tostring(math.pow(10,maxLength)-1)  -- return 999 for value >= 1000 when maxLength = 3
-		else
-			return string.sub(str, 1, maxLength-1).."."
-		end
-	else
-		return str
-	end
-end
-
+--------------------------------------------------------------------------------
+---- Formating as it is found on YnAMP
+--------------------------------------------------------------------------------
+--local indentationString	= ".............................." -- maxLength = 30 car
+--local indentationSpaces	= "                              "
+--
+--function Indentation(str, maxLength, bAlignRight, bShowSpace)
+	--local bIsNumber	= type(str) == "number"
+	--local minLength	= 2
+	--local indentStr	= (bShowSpace and indentationString) or indentationSpaces
+	--local maxLength = math.max(maxLength or string.len(indentStr))
+	----local str 		= (bIsNumber and str > math.pow(10,maxLength-2)-1 and tostring(math.floor(str))) or tostring(str)
+	----local str 		= (bIsNumber and str > 9 and tostring(math.floor(str))) or tostring(str)
+	--local str 		= tostring(str)
+	--local length 	= string.len(str)
+	--
+	--if length > maxLength and bIsNumber then
+		--str		= tostring(math.floor(tonumber(str)))
+		--length 	= string.len(str)
+	--end
+	--
+	--if length < maxLength then
+		--if bAlignRight then
+			--return string.sub(indentStr, 1, maxLength - length) .. str
+		--else
+			--return str.. string.sub(indentStr, 1, maxLength - length)
+		--end
+	--elseif length > maxLength and length > minLength then
+		--if bIsNumber then
+			--return tostring(math.pow(10,maxLength)-1)  -- return 999 for value >= 1000 when maxLength = 3
+		--else
+			--return string.sub(str, 1, maxLength-1).."."
+		--end
+	--else
+		--return str
+	--end
+--end
+--
 -- ===========================================================================
 function Close()	
     if m_kPopupDialog:IsOpen() then
@@ -2353,26 +2353,26 @@ function StopCountdown()
 	g_fCountdownInitialTime = NO_COUNTDOWN;
 	UpdateReadyButton();
 
-	-- List the player slots
-	local slotStatusString	= {}
-	local civLevelString	= {}
-	for key, v in pairs(SlotStatus) do
-		slotStatusString[v] = key
-	end
-	for key, v in pairs(CivilizationLevelTypes) do
-		civLevelString[v] = key
-	end
-		
-	print("------------------------------------------------------")
-	print("Setup Player slots :")
-	for slotID = 0, 63 do
-		local playerConfig = PlayerConfigurations[slotID]
-		if playerConfig then
-		--Indentation
-			print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), Indentation(playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),15),  playerConfig and playerConfig:IsAI())
-		end
-	end
-
+	-- List the player slots as it is found on YnAMP
+	--local slotStatusString	= {}
+	--local civLevelString	= {}
+	--for key, v in pairs(SlotStatus) do
+		--slotStatusString[v] = key
+	--end
+	--for key, v in pairs(CivilizationLevelTypes) do
+		--civLevelString[v] = key
+	--end
+		--
+	--print("------------------------------------------------------")
+	--print("Setup Player slots :")
+	--for slotID = 0, 63 do
+		--local playerConfig = PlayerConfigurations[slotID]
+		--if playerConfig then
+		----Indentation
+			--print(slotID, Indentation(playerConfig and playerConfig:GetLeaderTypeName(),20), Indentation(playerConfig and playerConfig:GetCivilizationTypeName(),25), Indentation(playerConfig and playerConfig:GetSlotName(),25), Indentation(playerConfig and (slotStatusString[playerConfig:GetSlotStatus()] or "UNK STATUS"),15), Indentation(playerConfig and (civLevelString[playerConfig:GetCivilizationLevelTypeID()] or "UNK LEVEL"),15),  playerConfig and playerConfig:IsAI())
+		--end
+	--end
+--
 	-- Update m_iFirstClosedSlot's player slot so it will show the Add Player button.
 	if(m_iFirstClosedSlot ~= -1) then
 		UpdatePlayerEntry(m_iFirstClosedSlot);
