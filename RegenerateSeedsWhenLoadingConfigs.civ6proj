@@ -23,7 +23,7 @@ If you simply load a config it will keep the seed number, ultimately generating 
 </Associations>]]></AssociationData>
     <AssemblyName>RegenerateSeedsWhenLoadingConfigs</AssemblyName>
     <RootNamespace>RegenerateSeedsWhenLoadingConfigs</RootNamespace>
-    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateText id="InlcludePopupSeedText"><File>Localisation/RegenerateSeedOnLoadConfigText.sql</File></UpdateText><ImportFiles id="ImportSeedPopup"><File>UI/Multiplayer/HostGame.lua</File><File>UI/AdvancedSetup.lua</File><File>UI/AdvancedSetup.xml</File></ImportFiles></FrontEndActions>]]></FrontEndActionData>
+    <FrontEndActionData><![CDATA[<FrontEndActions><UpdateText id="InlcludePopupSeedText"><File>Localisation/RegenerateSeedOnLoadConfigText.sql</File></UpdateText><ImportFiles id="ImportSeedPopup"><File>UI/Multiplayer/HostGame.lua</File><File>UI/Multiplayer/StagingRoom.lua</File></ImportFiles></FrontEndActions>]]></FrontEndActionData>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Default' ">
     <OutputPath>.</OutputPath>
@@ -39,6 +39,9 @@ If you simply load a config it will keep the seed number, ultimately generating 
       <SubType>Content</SubType>
     </Content>
     <Content Include="UI\Multiplayer\HostGame.lua">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="UI\Multiplayer\StagingRoom.lua">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

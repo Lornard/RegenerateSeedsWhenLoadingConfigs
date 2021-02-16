@@ -449,8 +449,7 @@ function OnLoadConfig()
 	local kParameters = {};
 	kParameters.FileType = SaveFileTypes.GAME_CONFIGURATION;
 
-	local ret = UIManager:QueuePopup(Controls.LoadGameMenu, PopupPriority.Current, kParameters);
-	print (ret);
+	UIManager:QueuePopup(Controls.LoadGameMenu, PopupPriority.Current, kParameters);
 
 	if (not m_kPopupDialogSeed:IsOpen()) then
 		m_kPopupDialogSeed:AddText(	  Locale.Lookup("LOC_LOAD_CONFIG_REGENERATE_SEED_WARNING"));
